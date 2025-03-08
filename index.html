@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>С 8 Марта, Мама!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Marck+Script&family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #ff69b4;
+            --secondary-color: #ff1493;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Marck Script', cursive;
+            min-height: 100vh;
+            background: linear-gradient(45deg, #fff0f5, #ffe4e1, #fff0f5);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .parallax-bg {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+        }
+
+        .parallax-bg span {
+            position: absolute;
+            background: rgba(255,105,180,0.1);
+            border-radius: 50%;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header {
+            margin: 3rem 0;
+            transform-style: preserve-3d;
+            animation: headerFloat 3s ease-in-out infinite;
+        }
+
+        h1 {
+            font-size: 4rem;
+            color: var(--primary-color);
+            text-shadow: 3px 3px 0px rgba(255,20,147,0.2);
+            margin-bottom: 1rem;
+        }
+
+        .flowers-container {
+            position: relative;
+            height: 200px;
+            margin: 3rem 0;
+        }
+
+        .flower {
+            position: absolute;
+            width: 120px;
+            filter: drop-shadow(0 0 5px rgba(0,0,0,0.1));
+            animation: flowerRotate 15s linear infinite;
+        }
+
+        .message-box {
+            background: linear-gradient(145deg, #ffffff, #fffafa);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin: 2rem 0;
+            box-shadow: 0 10px 30px rgba(255,105,180,0.15);
+            transform: perspective(1000px) rotateY(0deg);
+            transition: transform 0.5s;
+        }
+
+        .message-box:hover {
+            transform: perspective(1000px) rotateY(5deg);
+        }
+
+        p {
+            font-size: 1.8rem;
+            line-height: 1.6;
+            color: #6a4c4c;
+            margin: 1rem 0;
+        }
+
+        .hearts {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .heart {
+            position: absolute;
+            opacity: 0;
+            animation: heartFloat 3s linear infinite;
+        }
+
+        .sparkles {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: gold;
+            border-radius: 50%;
+            animation: sparkle 1s infinite;
+        }
+
+        .button-container {
+            margin: 2rem 0;
+        }
+
+        .surprise-btn {
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 1.2rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(255,105,180,0.3);
+        }
+
+        .surprise-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255,105,180,0.5);
+        }
+
+        @keyframes headerFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        @keyframes flowerRotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes heartFloat {
+            0% { 
+                opacity: 1;
+                transform: translateY(100vh) scale(0.5);
+            }
+            100% { 
+                opacity: 0;
+                transform: translateY(-100vh) scale(1.5);
+            }
+        }
+
+        @keyframes sparkle {
+            0% { transform: scale(0); opacity: 1; }
+            100% { transform: scale(3); opacity: 0; }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 3rem; }
+            .flower { width: 80px; }
+            .message-box { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="parallax-bg" id="parallaxBg"></div>
+    <div class="hearts" id="hearts"></div>
+    
+    <div class="container">
+        <header class="header">
+            <h1>С 8 Марта, Мамочка!</h1>
+            <div class="flowers-container">
+                <img src="https://cdn-icons-png.flaticon.com/512/679/679821.png" 
+                     class="flower" 
+                     style="left: 10%; animation-delay: 0s">
+                <img src="https://cdn-icons-png.flaticon.com/512/679/679821.png" 
+                     class="flower" 
+                     style="left: 40%; animation-delay: 2s">
+                <img src="https://cdn-icons-png.flaticon.com/512/679/679821.png" 
+                     class="flower" 
+                     style="left: 70%; animation-delay: 4s">
+            </div>
+        </header>
+
+        <div class="message-box">
+            <p>Дорогая мамочка,</p>
+            <p>В этот весенний день хочу сказать,<br>
+            Ты — самый главный человек для меня!<br>
+            Спасибо за тепло твоих рук,<br>
+            За нежность слов и мудрый взгляд.<br>
+            Пусть жизнь дарит только радость,<br>
+            А каждый день будет как праздник!</p>
+            <p>Люблю тебя бесконечно! ❤️</p>
+        </div>
+
+        <div class="button-container">
+            <button class="surprise-btn" onclick="createFireworks()">Тыкни для сюрприза! ✨</button>
+        </div>
+    </div>
+
+    <script>
+        function createParallax() {
+            const bg = document.getElementById('parallaxBg');
+            for(let i = 0; i < 50; i++) {
+                const span = document.createElement('span');
+                span.style.width = Math.random() * 20 + 'px';
+                span.style.height = span.style.width;
+                span.style.left = Math.random() * 100 + '%';
+                span.style.top = Math.random() * 100 + '%';
+                span.style.animation = `parallax ${Math.random() * 10 + 5}s linear infinite`;
+                bg.appendChild(span);
+            }
+        }
+
+        function createHearts() {
+            const heartsContainer = document.getElementById('hearts');
+            setInterval(() => {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.innerHTML = '❤️';
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.animationDuration = Math.random() * 3 + 2 + 's';
+                heartsContainer.appendChild(heart);
+                
+                setTimeout(() => heart.remove(), 3000);
+            }, 300);
+        }
+
+        function createFireworks() {
+            for(let i = 0; i < 50; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkles';
+                sparkle.style.left = Math.random() * 100 + '%';
+                sparkle.style.top = Math.random() * 100 + '%';
+                sparkle.style.animationDelay = Math.random() * 1 + 's';
+                document.body.appendChild(sparkle);
+                
+                setTimeout(() => sparkle.remove(), 1000);
+            }
+            new Audio('https://actions.google.com/sounds/v1/cartoon/clang.ogg').play();
+        }
+
+        window.onload = () => {
+            createParallax();
+            createHearts();
+        };
+    </script>
+</body>
+</html>
